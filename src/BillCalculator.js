@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function BillCalculator({ selectedFriend, onSplitBill }) {
   const [bill, setBill] = useState("");
   const [paidByUser, setpaidByUser] = useState("");
   const friendExpense = bill ? bill - paidByUser : "";
   const [selectedPaying, setSelectedPaying] = useState("user");
-
-  function modifyBalance(name, bal) {
-    setpaidByUser(0);
-    setBill(0);
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
